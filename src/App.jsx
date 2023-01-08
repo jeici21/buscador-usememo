@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import SearchBar from './components/Searchbar';
 
 const people = [
   {
@@ -72,6 +73,7 @@ function App() {
   const [data, setData] = useState([...people, ...calendar, ...emails]);
   const [selection, setSelection] = useState(null);
   const [currentOption, setCurrentOption] = useState('all');
+  const [count, setCount] = useState(0);
 
   const handleClick = (e) => {
     const op = e.target.name;
@@ -103,6 +105,8 @@ function App() {
       <button onClick={handleClick} name="people">People</button>
       <button onClick={handleClick} name="calendar">Calendar</button>
       <button onClick={handleClick} name="emails">Emails</button>
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+      <SearchBar items={data} onItemSelected={() => { }} />
     </div>
   );
 }
