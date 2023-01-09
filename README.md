@@ -36,7 +36,7 @@ Use the following steps to run this project locally:
 
 For a live demo please click on the following link:
 
-https://biblioteca-libros-jeici21.netlify.app
+https://buscador-jeici21.netlify.app/
 
 ## Authors
 
