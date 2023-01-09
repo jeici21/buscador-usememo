@@ -15,6 +15,7 @@ const StyledInput = styled.input`
     box-sizing: border-box;
     border: solid 1px #222;
     outline: none;
+    font-family: 'Samsung Sans Regular';
 `;
 
 export default function SearchBar({ items, onItemSelected }) {

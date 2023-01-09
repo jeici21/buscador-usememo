@@ -2,13 +2,13 @@ import { useMemo } from "react";
 import styled from 'styled-components';
 
 const StyledMarker = styled.span`
-    background-color: yellow;
+    background-color: green;
     font-weight: bolder;
     border-radius: 2px;
 `;
 
 const StyledItem = styled.a`
-    color: black;
+    color: var(--body-color);
     display: block;
     padding: 10px;
     border: none;

@@ -7,12 +7,15 @@ const Button = styled.button`
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: white;
+  background-color: var(--body-bg);
+  color: var(--body-color);
   border: solid 1px #ccc;
   cursor: pointer;
+  font-family: 'Samsung Sans Regular';
 
   &:hover {
     background-color: #efefef;
+    color: black;
   }
 `;//al usarlos como tags se aplican los estilos escritos aquí
 const people = [
@@ -85,8 +88,9 @@ const emails = [
 function App() {
   const [data, setData] = useState([...people, ...calendar, ...emails]);
   const [selection, setSelection] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [currentOption, setCurrentOption] = useState('all');
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   const handleClick = (e) => {
     const op = e.target.name;
@@ -117,12 +121,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='App'>
+      <h1>Buscador</h1>
       <Button onClick={handleClick} name="all">All</Button>
       <Button onClick={handleClick} name="people">People</Button>
       <Button onClick={handleClick} name="calendar">Calendar</Button>
       <Button onClick={handleClick} name="emails">Emails</Button>
-      <button onClick={() => setCount(count + 1)}>{count}</button>
+      {/* <button onClick={() => setCount(count + 1)}>{count}</button> */}
       {selection ? <div>You selected: {selection.title}</div> : ""}
       <SearchBar items={data} onItemSelected={handleItemSelected} />
     </div>

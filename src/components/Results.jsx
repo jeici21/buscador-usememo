@@ -5,8 +5,8 @@ import styled from 'styled-components';
 const ResultsContainer = styled.div`
     position: absolute;
     width: 400px;
-    background: white;
-    border: solid 1px #222;
+    background: var(--body-bg);
+    border: solid 3px #8F3A84;
     border-top: solid 1px transparent;
     margin-top: -3px;
     box-sizing: border-box;
@@ -20,6 +20,7 @@ export default function Results({ items, onItemSelected, query, onResultsCalcula
 
     useEffect(() => {
         onResultsCalculated(results);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [results]);
 
     function findMatch(items, query) {
